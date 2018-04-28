@@ -1,0 +1,49 @@
+version: "2"
+services:
+
+  service-registry:
+    image: service-registry
+    ports:
+      - 8761:8761
+
+  index-service:
+    image: index-service
+    ports:
+      - 8968:8968
+    links:
+      - service-registry
+      - zipkin-dashboard
+    depends_on:
+      - service-registry
+      - zipkin-dashboard
+
+  mesures-service:
+    image: mesures-service
+    ports:
+      - 8956:8956
+    links:
+      - service-registry
+      - zipkin-dashboard
+    depends_on:
+      - service-registry
+      - zipkin-dashboard
+
+  pmax-service:
+    image: pmax-service
+    links:
+      - service-registry
+    ports:
+      - 8967:8967
+    links:
+      - service-registry
+      - zipkin-dashboard
+    depends_on:
+      - service-registry
+      - zipkin-dashboard
+
+  zipkin-dashboard:
+    image: zipkin-dashboard
+    links:
+      - service-registry
+    ports:
+      - 9411:9411

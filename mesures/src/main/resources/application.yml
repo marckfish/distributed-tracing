@@ -1,0 +1,20 @@
+server:
+  port: 8956
+
+eureka:
+  instance:
+      hostname: service-registry
+      port: 8761
+      preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+spring:
+  application:
+    name: mesures-service
+  zipkin:
+    base-url: http://zipkin-dashboard:9411
+
+management:
+  security:
+    enabled: false
