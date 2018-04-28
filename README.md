@@ -1,5 +1,11 @@
 # distributed-tracing
 
+**Environment**
+
+* Java 8
+* Spring boot 1.5.2
+* Maven 3.3.9
+
 1- Build a project 
 
     mvn clean install -Pdocker
