@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PmaxController {
-    
+
     Logger logger = LoggerFactory.getLogger(PmaxController.class);
 
     @GetMapping(path = "/pmax")
