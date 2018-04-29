@@ -22,7 +22,7 @@ public class MesuresController {
         LOGGER.info("Index service call");
         String indexes = restTemplate.getForObject("http://index-service/indexes", String.class);
         LOGGER.info("Pmax service call");
-        String pmax = restTemplate.getForObject("http://pmax-service/pmax", String.class);
+        String pmax = restTemplate.getForObject("http://pmax-service/pmaxs", String.class);
         return new StringJoiner(",", "[", "]")
                 .add("index:"+indexes).add("pmax:"+pmax).toString();
     }
