@@ -24,7 +24,7 @@
 
     http://localhost:8956/mesures
     
-3.3 After having done tne above instructions, 
+3.3 After having done the above instructions, 
 go a second time to the dashboard zipkin and click on 
 
     Find Traces
