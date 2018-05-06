@@ -31,7 +31,7 @@ public class PmaxController {
         LOGGER.debug("In the pmaxController.getPmaxs() call");
         List<Pmax> pmaxs;
         try{
-            pmaxs = pmaxService.findAll();
+            pmaxs = pmaxService.findAll("h2");
         }finally {
             span.tag("peer.service", "pmaxService.findAll() h2");
             span.logEvent(Span.CLIENT_RECV);

@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-      hostname: service-registry
+      hostname: localhost
       port: 8761
       preferIpAddress: true
   client:
@@ -12,8 +12,8 @@ eureka:
 spring:
   application:
     name: mesures-service
-  zipkin:
-    base-url: http://zipkin-dashboard:9411
+#  zipkin:
+#    base-url: http://zipkin-dashboard:9411
 
 management:
   security:

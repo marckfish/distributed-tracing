@@ -1,6 +1,6 @@
 eureka:
   instance:
-      hostname: service-registry
+      hostname: localhost
       port: 8761
       preferIpAddress: true
   client:
@@ -16,3 +16,31 @@ server:
 spring:
   application:
     name: zipkin-dashboard
+  kafka:
+    consumer:
+      keyDeserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      valueDeserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+  cloud:
+    stream:
+      kafka:
+        binder:
+          zk-nodes: localhost
+          headers:
+            - X-B3-TraceId
+            - X-B3-SpanId
+            - X-B3-Sampled
+            - X-B3-ParentSpanId
+            - X-Span-Name
+            - X-Span-Export
+        bindings:
+
+kafka:
+  topic: zipkin
+  groupId: zipkinId
+
+
+
+
+

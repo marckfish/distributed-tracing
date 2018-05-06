@@ -1,6 +1,6 @@
 eureka:
   instance:
-      hostname: service-registry
+      hostname: localhost
       port: 8761
       preferIpAddress: true
   client:
@@ -17,4 +17,35 @@ spring:
   application:
     name: pmax-service
   zipkin:
-    base-url: http://zipkin-dashboard:9411
+    locator:
+      discovery:
+        enabled: true
+    enabled: false
+    base-url:
+    sender:
+      type: kafka
+  cloud:
+    stream:
+      kafka:
+        binder:
+          headers:
+            - X-B3-TraceId
+            - X-B3-SpanId
+            - X-B3-Sampled
+            - X-B3-ParentSpanId
+            - X-Span-Name
+            - X-Span-Export
+          zk-nodes: localhost:2181
+        bindings:
+          zipkin-output:
+            destination: zipkin
+            contentType: application/json
+  kafka:
+    template:
+      default-topic: zipkin
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+#  zipkin:
+#    base-url: http://zipkin-dashboard:9411
