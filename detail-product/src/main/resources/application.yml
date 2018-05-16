@@ -12,7 +12,9 @@ management:
     enabled: false
 
 server:
-  port: 9411
+  port: 8967
 spring:
   application:
-    name: zipkin-dashboard
+    name: product-detail
+  zipkin:
+    base-url: http://zipkin-dashboard:9411

@@ -22,7 +22,7 @@
     
 3.2 Go to the mesures endPoint 
 
-    http://localhost:8956/mesures
+    http://localhost:8956/products/1
     
 3.3 After having done tne above instructions, 
 go a second time to the dashboard zipkin and click on 
