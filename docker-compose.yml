@@ -7,7 +7,7 @@ services:
       - 8761:8761
 
   product-price:
-    image: index-service
+    image: product-price
     ports:
       - 8968:8968
     links:
@@ -18,7 +18,7 @@ services:
       - zipkin-dashboard
 
   product-service:
-    image: mesures-service
+    image: product
     ports:
       - 8956:8956
     links:
@@ -29,7 +29,7 @@ services:
       - zipkin-dashboard
 
   product-detail:
-    image: pmax-service
+    image: product-detail
     links:
       - service-registry
     ports:
