@@ -3,12 +3,10 @@ server:
 spring:
   application:
     name: product-price
-  zipkin:
-    base-url: http://zipkin-dashboard:9411
 
 eureka:
   instance:
-      hostname: service-registry
+      hostname: localhost
       port: 8761
       preferIpAddress: true
   client:

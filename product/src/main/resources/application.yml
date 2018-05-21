@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-      hostname: service-registry
+      hostname: localhost
       port: 8761
       preferIpAddress: true
   client:
@@ -12,8 +12,6 @@ eureka:
 spring:
   application:
     name: product-service
-  zipkin:
-    base-url: http://zipkin-dashboard:9411
   sleuth:
     sampler:
       percentage: 1.0
