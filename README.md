@@ -20,7 +20,7 @@
 
     http://localhost:9411/
     
-3.2 Go to the mesures endPoint 
+3.2 Go to the products endPoint 
 
     http://localhost:8956/products/1
     
